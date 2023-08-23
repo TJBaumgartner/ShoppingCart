@@ -1,7 +1,6 @@
 import './App.css'
-import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
-
+import Header from './Header';
 const App = () => {
 
   const [data, setData] = useState(null);
@@ -23,8 +22,7 @@ const App = () => {
   }, [])
   return (
     <div>
-      <h1>Hello from the main page of the app!</h1>
-      <p>Here are some examples of links to other pages</p>
+      <Header></Header>
       {loading && <div>A moment please...</div>}
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
@@ -37,13 +35,6 @@ const App = () => {
             </li>
           ))}
       </ul>
-      <nav>
-        <ul>
-          <li>
-            <Link to="profile">Profile page</Link>
-          </li>
-        </ul>
-      </nav>
     </div>
   );
 };
