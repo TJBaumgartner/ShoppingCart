@@ -1,7 +1,14 @@
+import { useParams } from "react-router-dom";
+import Header from "./Header";
+import TestCard from "./TestCard";
 const ShopPage = () => {
-  return (
+    const {name} = useParams()
+
+    return (
     <div>
-        <p>this is the shop!</p>
+        <Header></Header>
+        <p>this is the shop</p>
+        <TestCard data={name}></TestCard>
     </div>
   );
 };

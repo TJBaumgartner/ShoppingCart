@@ -11,10 +11,9 @@ const Router = () => {
       errorElement: <ErrorPage />,
     },
     {
-      path: "/shop",
+      path: "/shop/:name",
       element: <ShopPage />,
-    },
-
+    },    
   ]);
 
   return <RouterProvider router={router} />;
