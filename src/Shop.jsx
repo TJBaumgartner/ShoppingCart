@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import Header from "./Header";
-import TestCard from "./TestCard";
+import ShopGrid from "./shopGrid";
 const ShopPage = () => {
     const {name} = useParams()
 
@@ -8,7 +8,7 @@ const ShopPage = () => {
     <div>
         <Header></Header>
         <p>this is the shop</p>
-        <TestCard data={name}></TestCard>
+        <ShopGrid data={name}></ShopGrid>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-const TestCard = (props) => {
+import ItemCard from "./Card";
+const ShopGrid = (props) => {
     const sectionName = props.data
-    console.log(sectionName)
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -11,9 +11,6 @@ const TestCard = (props) => {
     // fetch('https://fakestoreapi.com/products'category/' + variable)
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(json=>console.log(json))
         fetch('https://fakestoreapi.com/products/category/' + sectionName)
                 .then((response) => {
                     return response.json()
@@ -31,13 +28,11 @@ const TestCard = (props) => {
         <ul>
             {data &&
             data.map((data) => (
-                <li key={data.id}>
-                <h3>{data.title}</h3>
-                </li>
+                <ItemCard key={data.id} title={data.title}></ItemCard>
             ))}
         </ul>
     </div>
   );
 };
 
-export default TestCard;
+export default ShopGrid;
