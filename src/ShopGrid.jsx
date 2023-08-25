@@ -11,6 +11,9 @@ const ShopGrid = (props) => {
     // fetch('https://fakestoreapi.com/products'category/' + variable)
 
     useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
         fetch('https://fakestoreapi.com/products/category/' + sectionName)
                 .then((response) => {
                     return response.json()
@@ -20,17 +23,17 @@ const ShopGrid = (props) => {
                 .finally(() => setLoading(false));
     }, [sectionName])
     return (
-    <div>
+    <div className="ShopContainer">
         {loading && <div>A moment please...</div>}
         {error && (
             <div>{`There is a problem fetching the post data - ${error}`}</div>
         )}
-        <ul>
+        <div className="ShoppingGrid">
             {data &&
             data.map((data) => (
-                <ItemCard key={data.id} title={data.title}></ItemCard>
+                <ItemCard key={data.id} title={data.title} image={data.image}></ItemCard>
             ))}
-        </ul>
+        </div>
     </div>
   );
 };

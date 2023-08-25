@@ -5,7 +5,7 @@ const ShopPage = () => {
     const {name} = useParams()
 
     return (
-    <div>
+    <div className="ShopPage">
         <Header></Header>
         <p>this is the shop</p>
         <ShopGrid data={name}></ShopGrid>

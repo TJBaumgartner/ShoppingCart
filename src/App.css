@@ -5,3 +5,18 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-decoration: none;
 }
+.ShoppingGrid{
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.ShopItem{
+  max-height: 500px;
+  width: auto;
+}
+.ShopItem img{
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
+}

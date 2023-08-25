@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
+    <div className="Header">
       <Link to="/shop/men's%20clothing">
         Click to shop mens clothes!
       </Link>
