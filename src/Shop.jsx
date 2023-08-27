@@ -1,14 +1,19 @@
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import ShopGrid from "./shopGrid";
+import Footer from "./Footer";
+//import { useState } from "react";
 const ShopPage = () => {
-    const {name} = useParams()
+    const {name} = useParams();
+    // const [cart, setCart] = useState([]);
+    // function addCart(title, img){
 
+    // }
     return (
     <div className="ShopPage">
         <Header></Header>
-        <p>this is the shop</p>
         <ShopGrid data={name}></ShopGrid>
+        <Footer></Footer>
     </div>
   );
 };

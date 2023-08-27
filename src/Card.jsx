@@ -1,9 +1,14 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+
 const ItemCard = (props) => {
+    const data = props.data;
     return (
     <div className="ShopItem">
-            <h3>{props.title}</h3>
-            <img src={props.image}></img>
+        <Link to={`/shop/${data.category}/${data.title}`} state={{props}}>
+            <h3>{data.title}</h3>
+            <img src={data.image}></img>
+        </Link>
     </div>
   );
 };

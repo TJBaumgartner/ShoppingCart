@@ -31,7 +31,7 @@ const ShopGrid = (props) => {
         <div className="ShoppingGrid">
             {data &&
             data.map((data) => (
-                <ItemCard key={data.id} title={data.title} image={data.image}></ItemCard>
+                <ItemCard key={data.id} data={data}></ItemCard>
             ))}
         </div>
     </div>
