@@ -6,13 +6,13 @@ import Footer from "./Footer";
 const ShopPage = () => {
     const {name} = useParams();
     // const [cart, setCart] = useState([]);
-    // function addCart(title, img){
-
-    // }
+    function test(){
+      console.log('this is a test')
+    }
     return (
     <div className="ShopPage">
         <Header></Header>
-        <ShopGrid data={name}></ShopGrid>
+        <ShopGrid data={name} handleClick={test}></ShopGrid>
         <Footer></Footer>
     </div>
   );

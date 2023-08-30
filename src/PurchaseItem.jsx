@@ -5,8 +5,7 @@ import { useLocation } from "react-router-dom";
 const PurchaseItem = () => {
   const location = useLocation()
   const {props} = location.state
-  console.log(props)
-    return (
+  return (
     <div className="ShopPage">
         <Header></Header>
         <div className="PurchaseContainer">
@@ -16,6 +15,7 @@ const PurchaseItem = () => {
             <p>{props.data.description}</p>
             <h2>${props.data.price}</h2>
             <h3>Rating: {props.data.rating.rate} <span>({props.data.rating.count} Reviews)</span></h3>
+            <button onClick={props.handleClick}>Add to Cart</button>
           </div>
         </div>
         <Footer></Footer>

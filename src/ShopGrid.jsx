@@ -13,7 +13,7 @@ const ShopGrid = (props) => {
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
-            .then(json=>console.log(json))
+            // .then(json=>console.log(json))
         fetch('https://fakestoreapi.com/products/category/' + sectionName)
                 .then((response) => {
                     return response.json()
@@ -31,7 +31,7 @@ const ShopGrid = (props) => {
         <div className="ShoppingGrid">
             {data &&
             data.map((data) => (
-                <ItemCard key={data.id} data={data}></ItemCard>
+                <ItemCard key={data.id} data={data} handleClick={props.handleClick}></ItemCard>
             ))}
         </div>
     </div>
