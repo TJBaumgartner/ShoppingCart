@@ -43,3 +43,10 @@
   height: 50px;
   background-color: gray;
 }
+.PurchaseContainer{
+  display: flex;
+}
+.PurchaseContainer img{
+  max-height: 500px;
+  width: auto;
+}
