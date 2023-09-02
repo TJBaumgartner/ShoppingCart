@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="Header">
       <ul>
@@ -23,6 +24,9 @@ const Header = () => {
           <Link to="/shop/electronics">
             Electronics
           </Link>
+        </li>
+        <li  onClick={props.handleClick}>
+            Cart
         </li>
       </ul>
 

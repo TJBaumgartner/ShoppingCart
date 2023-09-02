@@ -5,7 +5,7 @@ const ItemCard = (props) => {
     const data = props.data;
     return (
     <div className="ShopItem">
-        <Link to={`/shop/${data.category}/${data.title}`} state={{props}}>
+        <Link to={`/shop/${data.category}/${data.title}`} state={{data}}>
             <h3>{data.title}</h3>
             <img src={data.image}></img>
         </Link>

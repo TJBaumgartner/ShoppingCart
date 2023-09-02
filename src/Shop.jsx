@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import ShopGrid from "./shopGrid";
 import Footer from "./Footer";
 //import { useState } from "react";
-const ShopPage = () => {
+const ShopPage = (props) => {
     const {name} = useParams();
     // const [cart, setCart] = useState([]);
     function test(){
@@ -11,9 +12,9 @@ const ShopPage = () => {
     }
     return (
     <div className="ShopPage">
-        <Header></Header>
-        <ShopGrid data={name} handleClick={test}></ShopGrid>
-        <Footer></Footer>
+      <Header handleClick={props.handleClick}></Header>
+      <ShopGrid data={name} handleClick={test}></ShopGrid>
+      <Footer></Footer>
     </div>
   );
 };
