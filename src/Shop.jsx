@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import Header from "./Header";
 import ShopGrid from "./shopGrid";
 import Footer from "./Footer";
+import Cart from "./Cart";
 //import { useState } from "react";
 const ShopPage = (props) => {
     const {name} = useParams();
     return (
     <div className="ShopPage">
       <Header handleClick={props.handleClick} count={props.count}></Header>
+      <Cart cart={props.cart}></Cart>
       <ShopGrid data={name}></ShopGrid>
       <Footer></Footer>
     </div>

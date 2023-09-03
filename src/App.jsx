@@ -13,11 +13,12 @@ const [count, setCount] = useState(0);
 function addToCart(item, amount){
   setCount(count + 1);
   const newCart = [...cart];
+  const totalCost = item.price*amount;
   const product = cart.find((product) => product.item.id === item.id);
   if (product)
     newCart.map((item) => {
       if(item === product){
-        return (item.amount = item.amount + amount);
+        return (item.amount = item.amount + amount, item.totalCost = item.item.price*item.amount);
       }
       else{
         return item;
@@ -27,6 +28,7 @@ function addToCart(item, amount){
     newCart.push({
       item,
       amount,
+      totalCost,
     });
   }
   setCart(newCart)
@@ -36,10 +38,10 @@ return (
     <div className='App'>
     <Routes>
         <Route path="/*" element={<ShopPage count={count}/>} />
-        <Route path="/shop/:name" element={<ShopPage  count={count}/>} />
-        <Route path="/shop/:name/:item" element={<PurchaseItem handleClick={addToCart} count={count}/>} />
+        <Route path="/shop/:name" element={<ShopPage  count={count} cart={cart}/>} />
+        <Route path="/shop/:name/:item" element={<PurchaseItem handleClick={addToCart} count={count} cart={cart}/>} />
         <Route path="*" element={<ErrorPage />} />
-      </Routes>
+    </Routes>
     </div>
 );
 };
