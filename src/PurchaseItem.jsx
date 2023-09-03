@@ -7,7 +7,7 @@ const PurchaseItem = (props) => {
   const {data} = location.state
   return (
     <div className="ShopPage">
-        <Header></Header>
+        <Header count={props.count}></Header>
         <div className="PurchaseContainer">
           <img src={data.image}></img>
           <div className="PurchaseDescription">

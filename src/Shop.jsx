@@ -6,14 +6,10 @@ import Footer from "./Footer";
 //import { useState } from "react";
 const ShopPage = (props) => {
     const {name} = useParams();
-    // const [cart, setCart] = useState([]);
-    function test(){
-      console.log('this is a test')
-    }
     return (
     <div className="ShopPage">
-      <Header handleClick={props.handleClick}></Header>
-      <ShopGrid data={name} handleClick={test}></ShopGrid>
+      <Header handleClick={props.handleClick} count={props.count}></Header>
+      <ShopGrid data={name}></ShopGrid>
       <Footer></Footer>
     </div>
   );

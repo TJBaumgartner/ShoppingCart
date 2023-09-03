@@ -8,8 +8,10 @@ import { useState } from 'react';
 
 const App = () => {
 const [cart, setCart] = useState([])
+const [count, setCount] = useState(0);
 
 function addToCart(item, amount){
+  setCount(count + 1);
   const newCart = [...cart];
   const product = cart.find((product) => product.item.id === item.id);
   if (product)
@@ -30,16 +32,16 @@ function addToCart(item, amount){
   setCart(newCart)
   console.log(cart)
 }
-  return (
-      <div className='App'>
-        <Routes>
-          <Route path="/*" element={<ShopPage />} />
-          <Route path="/shop/:name" element={<ShopPage />} />
-          <Route path="/shop/:name/:item" element={<PurchaseItem handleClick={addToCart}/>} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </div>
-  );
+return (
+    <div className='App'>
+    <Routes>
+        <Route path="/*" element={<ShopPage count={count}/>} />
+        <Route path="/shop/:name" element={<ShopPage  count={count}/>} />
+        <Route path="/shop/:name/:item" element={<PurchaseItem handleClick={addToCart} count={count}/>} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </div>
+);
 };
 
 export default App;

@@ -26,7 +26,7 @@ const Header = (props) => {
           </Link>
         </li>
         <li  onClick={props.handleClick}>
-            Cart
+            Cart {props.count}
         </li>
       </ul>
 
