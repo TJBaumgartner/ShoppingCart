@@ -11,10 +11,22 @@ const [cart, setCart] = useState([])
 
 function addToCart(item, amount){
   const newCart = [...cart];
-  newCart.push({
-    item,
-    amount,
-  });
+  const product = cart.find((product) => product.item.id === item.id);
+  if (product)
+    newCart.map((item) => {
+      if(item === product){
+        return (item.amount = item.amount + amount);
+      }
+      else{
+        return item;
+      }
+    });
+  else{
+    newCart.push({
+      item,
+      amount,
+    });
+  }
   setCart(newCart)
   console.log(cart)
 }
