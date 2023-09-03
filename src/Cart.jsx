@@ -6,7 +6,8 @@ const Cart = (props) => {
     console.log(cartItems)
     return (
         <div className="test">
-         {cartItems.map((product) => {
+         {cartItems &&
+         cartItems.map((product) => {
             <CartItem key={product.item.id} price={product.totalCost} title={product.item.title} /> 
         })}
         </div>
