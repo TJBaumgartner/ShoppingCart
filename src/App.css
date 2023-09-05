@@ -50,8 +50,15 @@
   max-height: 500px;
   width: auto;
 }
-.test{
-  color: black;
-  background-color: green;
-  height: 200px;
+.Cart{
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(92, 92, 92, 0.863);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 2rem;
 }

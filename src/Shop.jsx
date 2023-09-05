@@ -10,7 +10,7 @@ const ShopPage = (props) => {
     return (
     <div className="ShopPage">
       <Header handleClick={props.handleClick} count={props.count} toggleCart={props.toggleCart}></Header>
-      {props.showCart && <Cart cart={props.cart}></Cart>}
+      {props.showCart && <Cart cart={props.cart} decrementItem={props.decrementItem}></Cart>}
       <ShopGrid data={name}></ShopGrid>
       <Footer></Footer>
     </div>

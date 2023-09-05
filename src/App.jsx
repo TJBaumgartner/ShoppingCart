@@ -41,6 +41,28 @@ function toggleCart(){
   console.log(showCart)
 }
 
+
+function decrementItem(item, amount){
+  setCount(count - 1);
+  const newCart = [...cart];
+  const product = cart.find((product) => product.item.id === item.item.id);
+  if (product)
+    newCart.map((item) => {
+      if(item === product){
+        return (item.amount = item.amount - amount, item.totalCost = item.item.price*item.amount);
+      }
+      else{
+        return item;
+      }
+    });
+    const index = newCart.findIndex((product) => product.item.id === item.item.id)
+    if(item.amount < 1){
+      newCart.splice(index,1)
+    }
+  setCart(newCart)
+  console.log(cart)
+}
+
 return (
     <div className='App'>
     <Routes>
@@ -50,13 +72,15 @@ return (
         count={count} 
         cart={cart}
         toggleCart={toggleCart}
-        showCart={showCart}/>} />
+        showCart={showCart}
+        decrementItem={decrementItem}/>} />
         <Route path="/shop/:name/:item" element={<PurchaseItem 
         addToCart={addToCart} 
         count={count} 
         cart={cart}
         toggleCart={toggleCart}
-        showCart={showCart}/>} />
+        showCart={showCart}
+        decrementItem={decrementItem}/>} />
         <Route path="*" element={<ErrorPage />} />
     </Routes>
     </div>
