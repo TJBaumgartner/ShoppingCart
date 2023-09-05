@@ -8,6 +8,7 @@ const CartItem = (props) => {
              <p>${data.totalCost}</p>
              <p>{data.amount}</p>
              <button onClick={() => props.decrementItem(data, 1)}>Decrease</button>
+             <button onClick={() => props.incrementItem(data, 1)}>Increase</button>
          </div>
     );
 };
