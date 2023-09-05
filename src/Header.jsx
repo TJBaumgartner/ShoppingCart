@@ -25,7 +25,7 @@ const Header = (props) => {
             Electronics
           </Link>
         </li>
-        <li  onClick={props.handleClick}>
+        <li  onClick={props.toggleCart}>
             Cart {props.count}
         </li>
       </ul>

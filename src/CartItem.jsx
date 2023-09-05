@@ -4,7 +4,8 @@ const CartItem = (props) => {
     return (
          <div className="productCad">
              <p>{props.title}</p>
-             <p>{props.price}</p>
+             <p>${props.price}</p>
+             <p>{props.amount}</p>
          </div>
     );
 };

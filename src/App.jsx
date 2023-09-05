@@ -7,8 +7,9 @@ import ErrorPage from './ErrorPage';
 import { useState } from 'react';
 
 const App = () => {
-const [cart, setCart] = useState([])
+const [cart, setCart] = useState([]);
 const [count, setCount] = useState(0);
+const [showCart, setShowCart] = useState(false);
 
 function addToCart(item, amount){
   setCount(count + 1);
@@ -34,12 +35,28 @@ function addToCart(item, amount){
   setCart(newCart)
   console.log(cart)
 }
+
+function toggleCart(){
+  showCart == false ? setShowCart(true) : setShowCart(false);
+  console.log(showCart)
+}
+
 return (
     <div className='App'>
     <Routes>
-        <Route path="/*" element={<ShopPage count={count}/>} />
-        <Route path="/shop/:name" element={<ShopPage  count={count} cart={cart}/>} />
-        <Route path="/shop/:name/:item" element={<PurchaseItem handleClick={addToCart} count={count} cart={cart}/>} />
+        <Route path="/*" element={<ShopPage 
+        count={count}/>} />
+        <Route path="/shop/:name" element={<ShopPage  
+        count={count} 
+        cart={cart}
+        toggleCart={toggleCart}
+        showCart={showCart}/>} />
+        <Route path="/shop/:name/:item" element={<PurchaseItem 
+        addToCart={addToCart} 
+        count={count} 
+        cart={cart}
+        toggleCart={toggleCart}
+        showCart={showCart}/>} />
         <Route path="*" element={<ErrorPage />} />
     </Routes>
     </div>
